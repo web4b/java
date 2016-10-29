@@ -28,8 +28,8 @@ public class AnnotatedClassLoader {
 	 *            the packagename which includes the entityclasses
 	 */
 	public static void appendAnnotatedClasses(Configuration cfg, String packagename) {
-		String pkn = packagename.replace(".", File.separator);
-		URL cl = Configuration.class.getResource(File.separator + pkn);
+		String pkn = packagename.replace(".", "/");
+		URL cl = Configuration.class.getResource("/" + pkn);
 
 		File dir = new File(cl.getFile());
 
